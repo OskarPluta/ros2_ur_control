@@ -1,10 +1,26 @@
-The package runs a ROS2 simulation using rvizz, ur5 robot. It is fully dockerized and it launches automatically. You just need to build docker with "docker build -t ros2_ur_project ." and then launch it with ./run.sh
+# ROS2 UR5 Simulation
 
-When presenting an ArUco marker (within  these
-        self.dictionaries_to_check = [
-            cv2.aruco.DICT_6X6_250,
-            cv2.aruco.DICT_5X5_100,
-            cv2.aruco.DICT_4X4_50,
-            cv2.aruco.DICT_APRILTAG_36h11
-        ]
-), you will be able to move the robot right and left. 
+This package provides a fully dockerized ROS2 simulation featuring the UR5 robot with visualization through RViz. The simulation launches automatically.
+
+## Getting Started
+
+### Build the Docker Image
+
+```bash
+docker build -t ros2_ur_project .
+# Run the Simulation
+./run.sh
+```
+
+# Using ArUco Markers
+
+Once the simulation is running, you can control the robot's lateral movement (left and right) by presenting an ArUco marker. The package supports the following marker dictionaries:
+
+```python
+self.dictionaries_to_check = [
+    cv2.aruco.DICT_6X6_250,
+    cv2.aruco.DICT_5X5_100,
+    cv2.aruco.DICT_4X4_50,
+    cv2.aruco.DICT_APRILTAG_36h11
+]
+```
