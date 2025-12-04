@@ -63,7 +63,7 @@ class URVisualController(Node):
         center_y = height // 2
         found_marker = False
         for detector in self.detectors:
-            corners, ids, rejected = detector.detectMarkers(frame)
+            corners, ids, _ = detector.detectMarkers(frame)
             
             if ids is not None:
                 found_marker = True
